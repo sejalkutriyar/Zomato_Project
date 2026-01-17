@@ -1,91 +1,59 @@
-# Zomato Ops - Order Management System
+# Zomato Ops Pro – Smart Kitchen + Delivery Hub
 
-A streamlined order management system for restaurant operations, built with React and Node.js.
-
-## Project Structure
-
-```
-Zomato/
-├── frontend.js    # React frontend application
-├── backend.js     # Node.js backend server
-└── README.md      # Project documentation
-```
+A full-stack MERN application for managing restaurant operations and delivery partners.
 
 ## Features
 
-- User Authentication (Manager & Delivery Partners)
-- Real-time Order Management
-- Order Status Updates
-- Delivery Partner Assignment
-- Responsive Dashboard
+### 👨‍🍳 Restaurant Manager Dashboard
+*   **Table View**: Real-time overview of all orders.
+*   **Create Orders**: Quickly add new orders directly from the dashboard.
+*   **Assign Partners**: Assign specific orders to available delivery partners (Rider 1, Rider 2, Rider 3).
+*   **Live Status Tracking**: Monitor order status from `PREP` -> `PICKED` -> `ON_ROUTE` -> `DELIVERED`.
+
+### 🛵 Delivery Partner View
+*   **Dedicated Interface**: Clean, mobile-friendly card view for riders.
+*   **Dynamic Actions**: Single-button workflow to update status (Mark as Picked, Start Delivery, etc.).
+*   **Real-time Assignments**: Instantly see when an order is assigned.
+
+## Tech Stack
+*   **Frontend**: React + Vite (Custom CSS for styling)
+*   **Backend**: Node.js + Express
+*   **Database**: MongoDB (using Mongoose)
 
 ## Setup Instructions
 
-### Prerequisites
-
-- Node.js (v14 or higher)
-- MongoDB
-- npm or yarn
-
-### Backend Setup
-
-1. Install dependencies:
+### 1. Clone the Repository
 ```bash
-npm install express cors body-parser mongoose dotenv
+git clone https://github.com/sejalkutriyar/Zomato_Project.git
+cd Zomato_Project
 ```
 
-2. Create a `.env` file with:
-```
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/zomato_ops
-```
-
-3. Start the backend:
+### 2. Backend Setup
+Navigate to the backend folder and install dependencies:
 ```bash
-node backend.js
+cd backend
+npm install
 ```
-
-### Frontend Setup
-
-1. Install dependencies:
+Start the backend server:
 ```bash
-npm install react react-dom axios
+npm run dev
+# Server running on http://localhost:5000
 ```
 
-2. Create an `index.html` file with:
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Zomato Ops</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="frontend.js"></script>
-  </body>
-</html>
-```
-
-3. Start the frontend:
+### 3. Frontend Setup
+Navigate to the frontend folder and install dependencies:
 ```bash
-npx vite
+cd frontend
+npm install
+```
+Start the frontend application:
+```bash
+npm run dev
+# App running on http://localhost:5173
 ```
 
-## Login Credentials
-
-- Manager:
-  - Username: manager
-  - Password: manager123
-
-- Delivery Partners:
-  - Username: rider1, rider2, rider3
-  - Password: rider123
-
-## API Endpoints
-
-- POST `/api/login` - User authentication
-- GET `/api/orders` - List all orders
-- POST `/api/orders` - Create new order
-- PUT `/api/orders/:orderId/assign` - Assign order to partner
-- PUT `/api/orders/:orderId/status` - Update order status
-- GET `/api/partner/:partnerId/order` - Get partner's current order
+## Credentials
+*   **Manager**: `manager` / `manager123`
+*   **Rider 1**: `rider1` / `rider123`
+*   **Rider 2**: `rider2` / `rider123`
+*   **Rider 3**: `rider3` / `rider123`
